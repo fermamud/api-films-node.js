@@ -1,0 +1,42 @@
+.notes {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & .notes__info {
+    margin: var(--space-1) var(--width-texte-normal) var(--space-1)
+      var(--width-texte-normal);
+
+    p {
+      font-family: var(--police-titre);
+      font-size: var(--police-parag-small);
+    }
+  }
+
+  & .notes__texte {
+    margin: var(--space-1) var(--width-texte-normal) var(--space-1) var(--width-texte-normal);
+
+    p {
+      font-family: var(--police-texte);
+      font-size: var(--police-parag-xsmall);
+    }
+  }
+
+  & .notes__etoiles {
+    display: flex;
+    margin: var(--space-1);
+
+    button {
+      align-items: center;
+      background-color: var(--couleur-neutre);
+      border: var(--couleur-neutre);
+      display: flex;
+      width: var(--width-small);
+
+      svg {
+        width: var(--width-small);
+      }
+    }
+  }
+}

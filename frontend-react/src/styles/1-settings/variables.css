@@ -1,0 +1,49 @@
+:root {
+  /* Couleurs */
+  --couleur-basique: #ffffff;
+  --couleur-noir: #000000;
+  --couleur-neutre: #fdf6e9;
+  --couleur-red: #c73e3e;
+  --couleur-verte: #007a80;
+
+  /* Espaces */
+  --space-0_1: 0.1rem;
+  --space-0_2: 0.2rem;
+  --space-0_25: 0.25rem;
+  --space-0_5: 0.5rem;
+  --space-0_8: 0.8rem;
+  --space-2: 2rem;
+  --space-1: 1rem;
+  --space-1_5: 1.5rem;
+  --space-2_5: 2.5rem;
+  --space-3: 3rem;
+  --space-3_5: 3.5rem;
+  --space-4_5: 4.5rem;
+  --space-7: 7rem;
+  --space-10: 10rem;
+  --space-16: 16rem;
+  
+  /* Espace Base */
+  --space-base: var(--space-1);
+
+  /* Largeur */
+  --width-xlarge: max(350px, 25vw);
+  --width-mlarge: max(22rem, 35vw);
+  --width-large: max(22rem, 15vw);
+  --width-medium: max(15rem, 22vw);
+  --width-normal: max(15rem, 20vw);
+  --width-small: max(4rem, 10vw);
+
+  /* Largeur textes */
+  --width-texte-normal: max(3rem, 5vw);
+
+  /* Largeur blocs */
+  --width-bloc-xlarge: max(350px, 40vw);
+  --width-bloc-medium: max(3rem, 5vw);
+  --width-bloc-normal: max(1.5rem, 6vw);
+
+  /* Largeur espacements petites */
+  --width-petit-normal: max(0.6rem, 1vw);
+  --width-petit-small: max(0.5rem, 1vw);
+  --width-petit-xsmall: max(0.4rem, 1vw);
+}

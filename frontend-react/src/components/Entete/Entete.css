@@ -1,0 +1,110 @@
+header {
+  background-image: linear-gradient(
+      135deg,
+      rgba(0, 121, 128, 0.739) 0%,
+      rgba(253, 246, 233, 0.572) 30%,
+      rgba(0, 121, 128, 1) 100%
+    ),
+    url("../../../public/img/banniere.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: right;
+
+  & nav {
+    font-size: var(--police-nav);
+
+    & ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding-right: var(--space-2_5);
+      margin: 0;
+
+      & .active {
+        border-bottom: var(--space-0_2) solid var(--couleur-neutre);
+      }
+
+      & li {
+        display: flex;
+        list-style: none;
+        padding: var(--space-2);
+
+        & img {
+          opacity: 0;
+        }
+
+        & a {
+          font-family: var(--police-titre);
+          color: var(--couleur-neutre);
+          text-decoration: none;
+        }
+      }
+    }
+
+    & .form-login {
+      display: flex;
+      flex-direction: column;
+
+      & input {
+        background-color: var(--couleur-neutre);
+        border: var(--couleur-noir) 2px solid;
+        height: var(--space-2);
+        padding: var(--space-0_2);
+      }
+    }
+
+    & .section-logged-in {
+      display: flex;
+      flex-direction: column;
+      justify-content: right;
+
+      & .form-logout {
+        display: flex;
+        justify-content: right;
+
+        button {
+          align-items: center;
+          justify-content: right;
+          width: var(--space-4_5);
+        }
+      }
+    }
+
+    & button {
+      background-color: var(--couleur-verte);
+      border: var(--couleur-neutre) 2px solid;
+      color: var(--couleur-neutre);
+      font-family: var(--police-normal);
+      font-size: var(--police-texte-normal);
+      font-weight: bolder;
+      height: var(--space-1_5);
+      margin-top: var(--space-0_5);
+      width: var(--space-7);
+    }
+
+    & button:hover {
+      color: var(--couleur-red);
+      background-color: var(--couleur-neutre);
+      border: var(--couleur-red) 2px solid;
+    }
+  }
+}
+
+.accueil-header {
+  background-image: linear-gradient(
+    135deg,
+    rgba(0, 121, 128, 1) 0%,
+    rgba(0, 121, 128, 0.7) 100%,
+    rgb(0, 121, 128) 100%
+  );
+}
+
+@media screen and (max-width: 480px) {
+  & .logo-container {
+    & .logo {
+      display: none;
+    }
+  }
+}

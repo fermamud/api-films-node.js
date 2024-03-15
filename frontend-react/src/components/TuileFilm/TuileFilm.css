@@ -1,0 +1,60 @@
+.container-imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  a {
+    text-decoration: none;
+    color: var(--couleur-noir);
+  }
+
+  & .container-image {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & .image {
+      aspect-ratio: 0.2/0.25;
+      border-radius: 0;
+      width: var(--width-normal);
+    }
+
+    /* & .image:hover {
+      border-radius: 3rem;
+      aspect-ratio: 0.4/0.5;
+      width: var(--width-medium);
+    } */
+
+    & .info-film {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: var(--width-normal);
+
+      h2 {
+        font-family: var(--police-titre);
+        font-size: var(--police-h2);
+      }
+
+      p {
+        font-family: var(--police-texte);
+        font-size: var(--police-parag-large);
+      }
+    }
+  }
+}
+
+/* .container-imgs .container-image .image {
+  opacity: 1;
+  transition: width 1s ease, aspect-ratio 1s ease, border-radius 1s ease,
+    opacity 1s ease;
+}
+.container-imgs:hover .container-image .image {
+  opacity: 0.5;
+}
+
+.container-imgs .container-image:hover .image {
+  opacity: 1;
+} */

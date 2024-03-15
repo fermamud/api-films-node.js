@@ -1,0 +1,27 @@
+.form-commentaire {
+  display: flex;
+  flex-direction: column;
+
+  & button {
+    background-color: var(--couleur-verte);
+    border-radius: var(--space-1) 0 var(--space-1) 0;
+    color: var(--couleur-neutre);
+    font-family: var(--police-titre);
+    font-size: var(--police-texte-large);
+    width: 15rem;
+  }
+
+  & button:hover {
+    background-color: var(--couleur-neutre);
+    border-radius: var(--space-1) 0 var(--space-1) 0;
+    border: 3px var(--couleur-verte) solid;
+    color: var(--couleur-red);
+  }
+
+  & textarea {
+    background-color: var(--couleur-neutre);
+    border: 3px var(--couleur-verte) solid;
+    height: var(--space-10);
+    width: var(--width-bloc-xlarge);
+  }
+}

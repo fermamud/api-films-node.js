@@ -1,0 +1,62 @@
+/* Espaces margin et padding */
+
+.m-xsmall {
+  margin: calc(var(--space-base) / 2);
+}
+
+.m-small {
+  margin: var(--space-base);
+}
+
+.mt-small {
+  margin-top: var(--space-base);
+}
+
+.mb-small {
+  margin-bottom: var(--space-base);
+}
+
+.m-medium {
+  margin: calc(var(--space-base) * 1.5);
+}
+
+.m-normal {
+  margin: calc(var(--space-base) * 2);
+}
+
+.m-lateral-normal {
+  margin-left: calc(var(--space-base) * 3);
+  margin-right: calc(var(--space-base) * 3);
+}
+
+.mt-normal {
+  margin-top: calc(var(--space-base) * 2);
+}
+
+.mb-normal {
+  margin-bottom: calc(var(--space-base) * 2);
+}
+
+.p-xsmall {
+  padding: calc(var(--space-base) / 2);
+}
+
+.p-small {
+  padding: var(--space-base);
+}
+
+.p-normal {
+  padding: calc(var(--space-base) * 2);
+}
+
+.pt-normal {
+  padding-top: calc(var(--space-base) * 2);
+}
+
+.pb-normal {
+  padding-bottom: calc(var(--space-base) * 2);
+}
+
+.pl-normal {
+  padding-left: calc(var(--space-base) * 2);
+}
