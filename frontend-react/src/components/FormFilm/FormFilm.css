@@ -1,21 +1,25 @@
-main {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+.wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .input-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    /* marge en haut et en bas */
-    margin-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* marge en haut et en bas */
+  margin-block: 1rem;
 }
 
 form.valid {
-    background-color: aquamarine;
+  background-color: aquamarine;
+  padding: 1rem;
 }
 
 form.invalid {
-    background-color: red;
+  background-color: beige;
+  padding: 1rem;
 }

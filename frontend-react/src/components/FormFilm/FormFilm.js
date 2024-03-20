@@ -75,7 +75,7 @@ function FormFilm() {
             // Reinit l'état de validité
             setFormValidity("invalid");
         } else {
-            const messageErreur = response.error;
+            const messageErreur = response.message;
             console.log("erreur", messageErreur);
         }
     }

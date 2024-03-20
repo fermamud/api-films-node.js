@@ -25,17 +25,17 @@ function Page404() {
                 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
                 <section>
                     <p className="m-xsmall">Coucou !
-                        <img src="icones/404.svg" alt="icone_404" />
+                        <img src="/icones/404.svg" alt="icone_404" />
                     </p>
                     <p className="m-xsmall">Nous n'avons pas pu trouver votre page !
-                        <img src="icones/triste.svg" alt="icone_emoji_triste" />
+                        <img src="/icones/triste.svg" alt="icone_emoji_triste" />
                     </p>
                     <p className="m-xsmall">Il semble qu'elle ait acheté les premiers billets disponibles pour regarder les nouveautés du cinéma et
                         n'a pas voulu travailler !
-                        <img src="icones/billet.svg" alt="icone_billet" />
+                        <img src="/icones/billet.svg" alt="icone_billet" />
                     </p>
                     <p className="m-xsmall">Mais, pas de soucis ! Le Vidéo Club est toujours là pour vous aider à trouver un bon film à regarder, prenez votre popcorn !
-                        <img src="icones/popcorn.svg" alt="icone_popcorn" />
+                        <img src="/icones/popcorn.svg" alt="icone_popcorn" />
                     </p>
                 </section>
             </div>

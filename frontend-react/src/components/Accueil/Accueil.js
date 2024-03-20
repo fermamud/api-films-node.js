@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'; 
 import data from './Accueil.json';
-//import './Accueil.css';
+// import './Accueil.css';
 
 function Accueil() {
 

@@ -25,11 +25,43 @@ function ListeFilms() {
         });
     }, [urlFiltre]);
 
+    async function deleteFilm(id) {
+        console.log('entrei aqui');
+          const data = {
+              method: "delete",
+              headers: {
+                  "Content-Type": "application/json",
+                  authorization: `Bearer ${localStorage.getItem("api-film")}`,
+                  body: JSON.stringify(id)
+              }
+          };
+          console.log(data);
+          const request = await fetch(`http://localhost:3301/api/films/${id}`, data);
+          const response = await request.json();  
+    
+          if (request.status === 200) {
+              // Afficher un message de success
+              console.log("SUPER");
+              await fetch(urlFiltre) 
+                  .then((reponse) => reponse.json())
+                  .then((data) => {
+                    setListeFilms(data);
+                    setEstCharge(true);
+                  });
+          } else {
+            const messageErreur = response.message;
+            console.log("erreur", messageErreur);
+        }
+    }
+
     // Gestion d'affichage du film
     const tuilesFilm = listeFilms.map((film, index) => {
-      return <Link key={index} data={film} to={`/film/${film.id}`}>
-                  <TuileFilm key={index} tri={tri} data={film}/>
-              </Link>
+      return <div key={index}>
+                  <Link key={index} data={film} to={`/film/${film.id}`}>
+                      <TuileFilm key={index} tri={tri} data={film}/>
+                  </Link>
+                  <button onClick = {() => deleteFilm(film.id)}>Delete</button>
+              </div>
     });
 
   // Gestion d'url avec filtre
