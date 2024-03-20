@@ -7,6 +7,7 @@ import Accueil from '../Accueil/Accueil';
 import ListeFilms from '../ListeFilms/ListeFilms';
 import Film from '../Film/Film';
 import Admin from '../Admin/Admin';
+import FormFilm from '../FormFilm/FormFilm';
 import Page404 from '../Page404/Page404';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import './App.css';
@@ -45,7 +46,7 @@ function App() {
     const form = e.target;
     //console.log(form);
 
-    if (form.dataset.connexion == "false") {
+    if (form.dataset.connexion === "false") {
         const body = {
           courriel: form.courriel.value,
           mdp: form.mdp.value,
@@ -123,9 +124,10 @@ function App() {
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.key}>
             {/* Si on est connecté, on continue a la page demandée */}
-            <Route element={<PrivateRoute />} >
-                <Route path="/admin" element={<Admin />}/>
+            <Route element={<PrivateRoute />}>
+                <Route path="/admin"  element={<Admin />}/>
             </Route>
+            <Route path="/admin/ajout-film" element={<FormFilm />}/>
             <Route path="/" className="active" element={<Accueil />} />
             <Route path="/liste-films" className="active" element={<ListeFilms />} />
             <Route path="/film/:id" element={<Film />}/>

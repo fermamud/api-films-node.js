@@ -18,6 +18,11 @@
   src: url("../../../public/fonts/TenorSans-Regular.ttf");
 }
 
+/* add recentemente */
+h1 {
+  font-family: "Titre";
+}
+
 :root {
   --police-titre: "Titre";
   --police-texte: "Texte";

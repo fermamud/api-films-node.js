@@ -37,22 +37,29 @@ function Entete(props) {
                         </form>
                     }
                 </li> */}
-                <li>
-                    {context ?
-                        <div>
+                {/* <li> */}
+                {context ?
+                    <div className='entete-prive'>
+                        <li>
                             <NavLink to="/admin">
                                 Page Prive
                             </NavLink>
-                        </div> : 
-                        ''
-                    }
-                    <form className="form-login" data-connexion={context} onSubmit={props.handleLogin}>
-                        {!context ? <input type='text' name="courriel" placeholder="Courriel" ></input> : ""}
-                        {!context ? <input type='password' name="mdp" placeholder="Mot de passe" ></input> : ""}
-                        {/* <input type='password' name="mdp" placeholder="Mot de passe" ></input> */}
-                        <button>{context ? "Logout" : "Login"}</button>
-                    </form>
-                </li>
+                        </li>
+                        <li>
+                            <NavLink to="/admin/ajout-film">
+                                Ajouter un film
+                            </NavLink>
+                        </li>
+                    </div> : 
+                    ''
+                }
+                <form className="form-login" data-connexion={context} onSubmit={props.handleLogin}>
+                    {!context ? <input type='text' name="courriel" placeholder="Courriel" ></input> : ""}
+                    {!context ? <input type='password' name="mdp" placeholder="Mot de passe" ></input> : ""}
+                    {/* <input type='password' name="mdp" placeholder="Mot de passe" ></input> */}
+                    <button>{context ? "Logout" : "Login"}</button>
+                </form>
+                {/* </li> */}
             </ul>
         </nav>
     </header>

@@ -46,6 +46,8 @@ header {
     & .form-login {
       display: flex;
       flex-direction: column;
+      /* adicionado recentemente */
+      justify-content: center;
 
       & input {
         background-color: var(--couleur-neutre);
@@ -99,6 +101,11 @@ header {
     rgba(0, 121, 128, 0.7) 100%,
     rgb(0, 121, 128) 100%
   );
+}
+
+/* adicionado recentemente */
+.entete-prive {
+  display: flex;
 }
 
 @media screen and (max-width: 480px) {

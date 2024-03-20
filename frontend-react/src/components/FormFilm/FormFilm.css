@@ -1,0 +1,21 @@
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /* marge en haut et en bas */
+    margin-block: 1rem;
+}
+
+form.valid {
+    background-color: aquamarine;
+}
+
+form.invalid {
+    background-color: red;
+}
