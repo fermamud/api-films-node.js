@@ -143,7 +143,7 @@ server.post("/api/films",
     check("description").escape().trim().notEmpty().isString(),
     check("annee").escape().trim().notEmpty().isInt(),
     check("titreVignette").escape().trim().notEmpty().isString()
-],
+], auth,
 async (req, res) => {
     try {
         // Après avoir validé chaque champ saisi par l'utilisateur, le code vérifie s'il y a eu des échecs de validation
@@ -189,7 +189,7 @@ server.put("/api/films/:id",
     check("description").escape().trim().notEmpty().isString().optional(),
     check("annee").escape().trim().notEmpty().isInt().optional(),
     check("titreVignette").escape().trim().notEmpty().isString().optional()
-],
+], auth,
 async (req, res) => {
     try {
         const id = req.params.id;
