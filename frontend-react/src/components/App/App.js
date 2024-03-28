@@ -128,7 +128,6 @@ function App() {
             <Route element={<PrivateRoute />}>
                 <Route path="/admin"  element={<Admin />}/>
                 <Route path="/admin/ajout-film" element={<FormFilm />}/>
-                <Route path="/admin/modification-film/:id" element={<ModifierFormFilm />}/>
             </Route>
             <Route path="/" className="active" element={<Accueil />} />
             <Route path="/liste-films" className="active" element={<ListeFilms />} />

@@ -2,3 +2,35 @@ body {
   background-color: var(--couleur-neutre);
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+
+  button {
+    background-color: var(--couleur-neutre);
+    font-family: "Normal";
+    font-size: var(--police-texte-normal);
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .button__delete {
+    border: var(--couleur-red) 3px solid;
+  }
+
+  .button__delete:hover {
+    border: var(--couleur-red) 3px solid;
+    background-color: var(--couleur-red);
+    color: var(--couleur-neutre);
+  }
+
+  .button__modification {
+    border: var(--couleur-verte) 3px solid;
+  }
+
+  .button__modification:hover {
+    border: var(--couleur-verte) 3px solid;
+    background-color: var(--couleur-verte);
+    color: var(--couleur-neutre);
+  }
+}

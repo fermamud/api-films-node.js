@@ -1,10 +1,39 @@
 // import { Form } from "react-router-dom";
 import './FormFilm.css';
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 // import { useNavigate } from "react-router-dom";
 // baixar react developer tools
 
 function FormFilm() {
+
+    const location = useLocation();
+    const id = location.state;
+    console.log(location.state);
+
+    useEffect(() => {
+        if (id !== null) {
+            console.log('yes baby');
+            const urlFilm = `https://demo-en-classe.onrender.com/api/films/${id}`;
+    
+            fetch(urlFilm)
+            .then((reponse) => reponse.json())
+            .then((data) => {
+                console.log(data);
+                setFormData(data);
+            });  
+        }
+    }, [id]);
+
+    const [formData, setFormData] = useState({
+        titre: "",
+        description: "",
+        realisation: "",
+        annee: "",
+        genres: [],
+        titreVignette: "vide.jpg"
+    });
+
     const genres = [
         "Action",
         "Aventure",
@@ -18,19 +47,8 @@ function FormFilm() {
         "Western"
     ];
 
-    const [formData, setFormData] = useState({
-        titre: "",
-        description: "",
-        realisation: "",
-        annee: "",
-        genres: [],
-        titreVignette: "vide.jpg"
-    });
-
-
     const [formValidity, setFormValidity] = useState("invalid");
     // const navigate = useNavigate();
-    // ICI ON POURRAIT UTILISER USESTATE POUR GERER LA MESSAGE D'ERREUR (VER O CODIGO DELE)
 
     function onFormDataChange(evenement) {
         const name = evenement.target.name;
@@ -51,7 +69,7 @@ function FormFilm() {
             }
             const donneeModifiee = {...formData, "genres":genres};
             setFormData(donneeModifiee);
-        } else if (name == "titreVignette") {
+        } else if (name === "titreVignette") {
             const nomFichier = evenement.target.files[0].name;
             // como ele fez na aula
             // const donneeModifiee = {...formData, titreVignette: nomFichier};
@@ -80,7 +98,7 @@ function FormFilm() {
 
         // Prépare la donnée
         const data = {
-            method: "POST",
+            method: (location.state !== null ? "PUT" : "POST"),
             headers: {
                 "Content-Type": "application/json",
                 authorization: `Bearer ${localStorage.getItem("api-film")}`
@@ -89,9 +107,13 @@ function FormFilm() {
         };
 
         // On récupere le token
-
         // On soumet
-        const request = await fetch("http://localhost:3301/api/films", data);
+        let request = '';
+        if (id !== null) {
+            request = await fetch(`http://localhost:3301/api/films/${id}`, data);
+        } else{
+            request = await fetch("http://localhost:3301/api/films", data);
+        } 
         const response = await request.json();
 
         // On gere la réponse du formulaire
@@ -99,7 +121,7 @@ function FormFilm() {
             // Afficher un message de success
             console.log("SUPER");
 
-            // Vide le formulaire
+            // Vider le formulaire
             setFormData({
                 titre: "",
                 description: "",
@@ -109,9 +131,7 @@ function FormFilm() {
                 titreVignette: "vide.jpg"
             });
 
-            // Reinit l'état de validité
             setFormValidity("invalid");
-            // navigate("/"); // Redirige vers une page en particulier
         } else {
             const messageErreur = response.message;
             console.log("erreur", messageErreur);
@@ -154,17 +174,10 @@ function FormFilm() {
                             })
                         }
                     </div>
-
-
-
                     <div className="input-group">
                         <label htmlFor="titreVignette">Vignette</label>
                         <input type="file" name="titreVignette" id="titreVignette" accept=".jpeg, .jpg, .png, .webp" onChange={onFormDataChange}/>
                     </div>
-
-
-
-
                     <input type="submit" value="Envoyer" disabled={ formValidity === "invalid" ? "disabled" : ""}></input>
                 </form>
                 {/* olhar no codigo dele a continuacao

@@ -5,7 +5,7 @@ import { AppContext } from '../App/App';
 import TuileFilm from '../TuileFilm/TuileFilm';
 import Filtre from '../Filtre/Filtre';
 import './ListeFilms.css';
-import ModifierFormFilm from '../ModifierFormFilm/ModifierFormFilm';
+//import ModifierFormFilm from '../ModifierFormFilm/ModifierFormFilm';
 
 function ListeFilms() {
 
@@ -66,12 +66,12 @@ function ListeFilms() {
                       <TuileFilm key={index} tri={tri} data={film}/>
                   </Link>
                   {(context) ?   
-                    <div>
-                      <button onClick = {() => deleteFilm(film.id)}>Delete</button>
-                        <Link key={index} to={`/admin/modification-film/${film.id}`} data={film} >
-                          <button>Modifier</button>
+                    <div className='buttons'>
+                      <button className="button__delete" onClick = {() => deleteFilm(film.id)}>Delete</button>
+                        {/* <Link key={index} to={`/admin/modification-film/${film.id}`} data={film} > */}
+                        <Link key={index} to={'/admin/ajout-film'} state={film.id} >
+                          <button className="button button__modification">Modifier</button>
                         </Link>
-                      
                     </div>
                     :
                     ''
