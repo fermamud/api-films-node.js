@@ -15,11 +15,13 @@
 }
 
 form.valid {
+  margin-top: 1rem;
   background-color: aquamarine;
   padding: 1rem;
 }
 
 form.invalid {
+  margin-top: 1rem;
   background-color: beige;
   padding: 1rem;
 }
