@@ -8,6 +8,7 @@ import ListeFilms from '../ListeFilms/ListeFilms';
 import Film from '../Film/Film';
 import Admin from '../Admin/Admin';
 import FormFilm from '../FormFilm/FormFilm';
+import ModifierFormFilm from '../ModifierFormFilm/ModifierFormFilm';
 import Page404 from '../Page404/Page404';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import './App.css';
@@ -126,8 +127,9 @@ function App() {
             {/* Si on est connecté, on continue a la page demandée */}
             <Route element={<PrivateRoute />}>
                 <Route path="/admin"  element={<Admin />}/>
+                <Route path="/admin/ajout-film" element={<FormFilm />}/>
+                <Route path="/admin/modification-film/:id" element={<ModifierFormFilm />}/>
             </Route>
-            <Route path="/admin/ajout-film" element={<FormFilm />}/>
             <Route path="/" className="active" element={<Accueil />} />
             <Route path="/liste-films" className="active" element={<ListeFilms />} />
             <Route path="/film/:id" element={<Film />}/>

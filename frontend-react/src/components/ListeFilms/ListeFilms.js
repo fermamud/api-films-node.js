@@ -1,11 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { AppContext } from '../App/App';
 import TuileFilm from '../TuileFilm/TuileFilm';
 import Filtre from '../Filtre/Filtre';
 import './ListeFilms.css';
+import ModifierFormFilm from '../ModifierFormFilm/ModifierFormFilm';
 
 function ListeFilms() {
+
+    const context = useContext(AppContext);
+    console.log(context);
 
     const urlListeFilms = 'https://demo-en-classe.onrender.com/api/films';
     const [urlFiltre, setUrlFiltre] = useState([urlListeFilms]);
@@ -60,7 +65,17 @@ function ListeFilms() {
                   <Link key={index} data={film} to={`/film/${film.id}`}>
                       <TuileFilm key={index} tri={tri} data={film}/>
                   </Link>
-                  <button onClick = {() => deleteFilm(film.id)}>Delete</button>
+                  {(context) ?   
+                    <div>
+                      <button onClick = {() => deleteFilm(film.id)}>Delete</button>
+                        <Link key={index} to={`/admin/modification-film/${film.id}`} data={film} >
+                          <button>Modifier</button>
+                        </Link>
+                      
+                    </div>
+                    :
+                    ''
+                  }
               </div>
     });
 

@@ -131,7 +131,6 @@ function Film() {
                 </div>
                 <img className="image" src={`/img/${infoFilm.titreVignette}`} alt={infoFilm.titre} />
             </motion.div>
-
             <Note handleVote={nbVotes} handleAverage={average} handleNote={soumettreNote} />
             <div className="blocCommentaire mt-small mb-small">
                 {(context.estLog) ?

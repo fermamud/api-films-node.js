@@ -1,0 +1,12 @@
+.error-message {
+  display: none;
+  color: red;
+}
+
+input:invalid + .error-message {
+  display: block;
+}
+
+textarea:invalid + .error-message {
+  display: block;
+}
