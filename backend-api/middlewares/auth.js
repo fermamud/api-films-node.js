@@ -2,12 +2,13 @@ const jwt = require("jsonwebtoken");
 const db = require("../config/db");
 
 const auth = async(req, res, next) => {
-    try {    // Si le jeton est valide
+    try {    
+        // Si le jeton est valide
         // Est-ce qu'il y quelque chose dans l'entete
         if (req.headers.authorization) {
             console.log(req.headers.authorization);
+
             // Transforme en array et retourne la portion apres Bearer
-            // Example d'auth : "Bearer isohdshfdfuidhf.dhsiudshsad"
             const jetonAValider = req.headers.authorization.split(" ")[1];
             const jetonDecode = jwt.verify(jetonAValider, process.env.JWT_SECRET);
 
@@ -20,14 +21,9 @@ const auth = async(req, res, next) => {
                 // Appele la suite de la requete initiale
                 next();
             } else {
-                // Si l'utilisateur n'existe pas, on retourne une erreur non authorisée
-                // res.statusCode = 401;
-                // res.json({"message": "Non autorisé"});
                 throw new Error("Non autorisé");
             }
         } else {
-            // res.statusCode = 401;
-            // res.json({"message": "Non autorisé"});
             throw new Error("Non autorisé");
         }
     } catch (erreur) {

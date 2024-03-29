@@ -25,7 +25,7 @@ server.use(express.static(path.join(__dirname, "public")));
 server.use(express.json());
 
 // Importation initial de la base de données 'utilisateurs'
-server.post("/utilisateurs/initialiser", (req, res) => {
+server.post("/utilisateurs/initialiser", auth, (req, res) => {
     try {
         const utilisateursTest = require("./data/utilisateursTest.js");
 
@@ -43,7 +43,7 @@ server.post("/utilisateurs/initialiser", (req, res) => {
 });
 
 // Importation initial de la base de données 'films'
-server.post("/donnees/initialiser", (req, res) => {
+server.post("/donnees/initialiser", auth, (req, res) => {
     try {
         const donneesTest = require("./data/donneesTest.js");
 
