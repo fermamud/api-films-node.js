@@ -1,27 +1,75 @@
 .wrapper {
   align-items: center;
   display: flex;
+  font-family: "Normal";
   flex-direction: column;
   justify-content: center;
   margin-top: 1rem;
-}
 
-.input-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  /* marge en haut et en bas */
-  margin-block: 1rem;
-}
+  .message__modification {
+    color: red;
+    padding: 0.5rem;
+  }
 
-form.valid {
-  margin-top: 1rem;
-  background-color: aquamarine;
-  padding: 1rem;
-}
+  .non_message {
+    display: none;
+  }
 
-form.invalid {
-  margin-top: 1rem;
-  background-color: beige;
-  padding: 1rem;
+  .message__erreur {
+    color: green;
+    font-family: "Titre";
+    font-size: var(--police-texte-large);
+    padding: 0.5rem;
+  }
+
+  .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /* marge en haut et en bas */
+    margin-block: 1rem;
+  }
+
+  form.valid {
+    border: var(--couleur-verte) 3px solid;
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+
+  form.invalid {
+    background-color: var(--couleur-neutre);
+    border: var(--couleur-noir) 3px solid;
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+
+  input[type="submit"] {
+    background-color: var(--couleur-verte);
+    color: var(--couleur-basique);
+    cursor: pointer;
+    font-size: var(--police-texte-normal);
+    font-weight: bolder;
+    padding: 0.5rem;
+  }
+
+  input[type="submit"]:disabled {
+    background-color: var(--couleur-red);
+    color: var(--couleur-basique);
+    font-size: var(--police-texte-normal);
+    font-weight: bolder;
+    padding: 0.5rem;
+  }
+
+  .error-message {
+    display: none;
+    color: red;
+  }
+
+  input:invalid + .error-message {
+    display: block;
+  }
+
+  textarea:invalid + .error-message {
+    display: block;
+  }
 }

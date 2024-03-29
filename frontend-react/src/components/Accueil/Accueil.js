@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'; 
 import data from './Accueil.json';
-// import './Accueil.css';
+import './Accueil.css';
 
 function Accueil() {
 
@@ -34,7 +34,7 @@ function Accueil() {
     >
         <div className="container-imgs-accueil mt-normal mb-normal">
             <div className="container-image">
-                {/* <img className="image" src="img/accueil_2.jpg" alt="" /> */}
+                <img className="image" src="img/accueil_2.jpg" alt="" />
                 <div className="info-film">
                     <motion.div
                         key='accueil-icones-1'
@@ -44,11 +44,11 @@ function Accueil() {
                         variants={variantIcones}
                         className="all-film"
                     >
-                        {/* <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
                         <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
                         <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
                         <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
-                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" /> */}
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
                     </motion.div>
                         {dataAffichage[0]}
                     <motion.div
@@ -59,11 +59,11 @@ function Accueil() {
                         variants={variantIcones}
                         className="all-film"
                     >
-                        {/* <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
                         <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
                         <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
                         <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
-                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" /> */}
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
+                        <img className="icone-cinema" src="icones/star.svg" alt="icone-star" />
                     </motion.div>
                 </div>
             </div>
@@ -77,11 +77,11 @@ function Accueil() {
                         variants={variantIcones}
                         className="all-film"
                     >
-                        {/* <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
                         <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
                         <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
                         <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
-                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" /> */}
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
                     </motion.div>
                         {dataAffichage[1]}
                     <motion.div
@@ -92,17 +92,17 @@ function Accueil() {
                         variants={variantIcones}
                         className="all-film"
                     >
-                        {/* <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
                         <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
                         <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
                         <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
-                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" /> */}
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
+                        <img className="icone-cinema" src="icones/film_strip.svg" alt="icone-film" />
                     </motion.div>
                 </div>
-                {/* <img className="image" src="img/accueil_1.jpg" alt="" /> */}
+                <img className="image" src="img/accueil_1.jpg" alt="" />
             </div>
             <div className="container-image">
-                {/* <img className="image" src="img/accueil_3.jpg" alt="" /> */}
+                <img className="image" src="img/accueil_3.jpg" alt="" />
                 <div className="info-film">
                     <motion.div
                         key='accueil-icones-5'
@@ -112,11 +112,11 @@ function Accueil() {
                         variants={variantIcones}
                         className="all-film"
                     >
-                        {/* <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
                         <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
                         <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
                         <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
-                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" /> */}
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
                     </motion.div>  
                         {dataAffichage[2]}
                     <motion.div
@@ -127,11 +127,11 @@ function Accueil() {
                         variants={variantIcones}
                         className="all-film"
                     >
-                        {/* <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
                         <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
                         <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
                         <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
-                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" /> */}
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
+                        <img className="icone-cinema" src="icones/popcorn.svg" alt="icone-popcorn" />
                     </motion.div>
                 </div>
             </div>

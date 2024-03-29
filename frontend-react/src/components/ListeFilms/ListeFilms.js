@@ -10,7 +10,6 @@ import './ListeFilms.css';
 function ListeFilms() {
 
     const context = useContext(AppContext);
-    console.log(context);
 
     const urlListeFilms = 'https://demo-en-classe.onrender.com/api/films';
     const [urlFiltre, setUrlFiltre] = useState([urlListeFilms]);
@@ -31,7 +30,6 @@ function ListeFilms() {
     }, [urlFiltre]);
 
     async function deleteFilm(id) {
-        console.log('entrei aqui');
           const data = {
               method: "delete",
               headers: {
@@ -40,13 +38,12 @@ function ListeFilms() {
                   body: JSON.stringify(id)
               }
           };
-          console.log(data);
+
           const request = await fetch(`http://localhost:3301/api/films/${id}`, data);
           const response = await request.json();  
     
           if (request.status === 200) {
               // Afficher un message de success
-              console.log("SUPER");
               await fetch(urlFiltre) 
                   .then((reponse) => reponse.json())
                   .then((data) => {
@@ -68,7 +65,6 @@ function ListeFilms() {
                   {(context) ?   
                     <div className='buttons'>
                       <button className="button__delete" onClick = {() => deleteFilm(film.id)}>Delete</button>
-                        {/* <Link key={index} to={`/admin/modification-film/${film.id}`} data={film} > */}
                         <Link key={index} to={'/admin/ajout-film'} state={film.id} >
                           <button className="button button__modification">Modifier</button>
                         </Link>
